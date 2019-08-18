@@ -1,0 +1,92 @@
+body {
+	font-family: 'Belleza', sans-serif;	
+}
+
+/*Navbar */
+
+.titlespan {
+	color: #3399ff;
+}
+
+.resttabs {
+	margin-left: 130px;
+}
+
+.title {
+	margin-left: 50px;
+}
+
+.tabs {
+	padding: 5px 30px;
+}
+
+/*Carousel*/
+
+.carousel-img {
+	height: 600px;
+	width: 1368px;
+}
+
+/*Second section*/
+
+.white-section {
+    background-color: #fff;
+    margin-top: 60px;
+}
+
+.my-picture {
+	height: 500px;
+	width: 400px;
+	border-radius: 20%;
+	float: left;
+}
+
+.my-picturediv {
+	padding: 50px 100px;
+
+	
+}
+
+.info {
+	display:inline;
+}
+
+.about-para {
+	padding-left: 35%;
+	padding-right: 10%;
+	margin-left: 10%;
+	font-size: 110%;
+}
+
+/*Third Section*/
+
+.blue-section {
+	margin-top: 120px;
+	background-image: linear-gradient(to right top, #746bd1, #7377d7, #7483dc, #778fe1, #7c9ae4, #74a7ed, #6db3f3, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+
+.expertise {
+	padding-top: 2.5%;
+	text-align: center;
+	font-size: 230%;
+}
+
+ hr { 
+ 	margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid;
+    width: 70%;
+    opacity: 0.2;
+}
+
+ul.expertise-list {
+	margin-left: 7%;
+	padding-top: 4%;
+	padding-bottom: 4%;
+	list-style-image: url('Images/rec.png');
+	columns: 2;
+   -webkit-columns: 2;
+   -moz-columns: 2;
+   font-size: 130%;
+}
