@@ -38,13 +38,11 @@ body {
 }
 
 .img {
-    max-width: 100%;
-    height: auto;
-    width: auto\9; /* ie8 */
+ position: relative;
 }
 
-.info {
-	display:inline;
+.about-para {
+	position: relative;
 }
 
 
@@ -89,4 +87,16 @@ ul.expertise-list {
    -webkit-columns: 2;
    -moz-columns: 2;
    font-size: 130%;
+}
+
+@media (max-width: 1028px) {
+
+  .img {
+    position: static;
+    float: none;
+  }
+
+  .about-para {
+    position: static;
+  }
 }
