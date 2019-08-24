@@ -4,7 +4,7 @@ body {
 
 /*Navbar */
 .h2 {
-	font-size:10vw
+	font-size:10vw;
 }
 
 .titlespan {
@@ -33,7 +33,7 @@ body {
 /*Second section*/
 
 .white-section {
-    background-color: #fff;
+    background-color: #F5F5F5;
     margin-top: 60px;
 }
 
@@ -49,8 +49,8 @@ body {
 .main-content img { 
  float: left; 
  padding: 0 20px 20px 0px;
- height: 350px;
- width: 250px;
+ height: 340px;
+ width: 240px;
  border-radius: 20%;
  margin-left: 5%;
  margin-right: 3%;
@@ -60,7 +60,7 @@ body {
 
 .blue-section {
 	margin-top: 120px;
-	background-image: linear-gradient(to right top, #746bd1, #7377d7, #7483dc, #778fe1, #7c9ae4, #74a7ed, #6db3f3, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 
 .expertise {
@@ -80,16 +80,16 @@ body {
 
 ul.expertise-list {
 	margin-left: 7%;
-	padding-top: 4%;
+	padding-top: 2%;
 	padding-bottom: 4%;
 	list-style-image: url('/Images/rec.png');
 	columns: 2;
    -webkit-columns: 2;
    -moz-columns: 2;
-   font-size: 130%;
+   font-size: 120%;
 }
 
-@media (max-width: 1028px) {
+/*@media (max-width: 1028px) {
 
   .img {
     position: static;
@@ -99,4 +99,4 @@ ul.expertise-list {
   .about-para {
     position: static;
   }
-}
+}*/
