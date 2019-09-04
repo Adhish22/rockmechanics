@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 
-<%- include("header") -%>
+<%- include("partials/header") -%>
 
-  <a href="#tunnels.transportation">Tunnels - Transportation </a><br />
-  <a href="#tunnels.water">Tunnels - Water</a><br />
-  <a href="#tunnels.utility">Tunnels – Utility/Utilidor</a><br />
-  <a href="#shafts">Shafts</a><br />
-  <a href="#hdd">HDD/Micro-Tunneling</a><br />
-  <a href="#dams">Dams</a><br />
-  
-  <br />
+<link rel="stylesheet" type="text/css" href="/CSS/projects.css">
 
+<div class="heading"><h4 class="title"> Company Projects </h4></div>
+
+<div class="container">
+<ul class="list-group list-group-horizontal projects-list" align="center">
+  <li class="list-group-item"><a href="#" rel="p1">Tunnels - Transportation </a></li>
+  <li class="list-group-item"><a href="#" rel="p2">Tunnels - Water</a></li>
+  <li class="list-group-item"><a href="#" rel="p3">Tunnels – Utility/Utilidor</a></li>
+  <li class="list-group-item"><a href="#" rel="p4">Shafts</a></li>
+  <li class="list-group-item"><a href="#" rel="p5">HDD/Micro-Tunneling</a></li>
+  <li class="list-group-item"><a href="#" rel="p6">Dams</a></li>
+</ul>
+</div>
+  <div class="content">
+  <div id="p1" class="box">
   <a name="tunnels.transportation">Tunnels - Transportation </a>
   <h5>Evergreen Line Rapid Transit Project Vancouver, BC</h5>
   <p>RFP Level design of approximately 11 km (6.8 miles) advanced light rapid transit (ALRT) line that connects Coquitlam to Vancouver via Port Moody and Burnaby. It consists of elevated and at-grade guideway with 6 new stations and an approximately 2-kilometer-long (1.2 miles) bored tunnel 6 m (20 ft) excavation diameter.
@@ -60,10 +67,10 @@
   <h5>Rapid Transit Expansion Program (RTEP), Toronto, Ontario</h5>
   <p>The overall program consisted of a number of fixed facilities, including stations, tunnels, cut and cover running structures, yards and shops constructed in the glacial deposits. There were four extensions planned with a total length of 18.7 km (11.6 miles):  Eglinton West, Sheppard Subway, Spadina York University Extension and Scarborough RT Extension. Only Sheppard Subway was constructed at that time using Lovat EPB TBM - Earth Pressure Balance - Tunnel Boring Machine, followed immediately by lining with precast concrete tunnel liners.
   </p>
+  </div>
   
-  <br />
-  <br />
 
+  <div id="p2" class="box">
   <a name="tunnels.water">Tunnels - Water</a>
    <h5>Abu Hamour (Musaimeer) Surface & Ground Water Drainage Tunnel, Phase I , Doha Qatar</h5>
   <p>Design, construction and commissioning of 9.5 km, 3.7 m ID, TBM mined tunnel and 23 shafts. Most of the shafts are offline therefore requiring the construction of 18 adits up to 4 m (13 ft) long and application of sequential excavation tunneling methods (SEM/NATM). The tunnel is supported by unbolted/doweled steel fiber reinforced concrete segmental lining. 
@@ -115,17 +122,18 @@
   <h5>Bingley Road Tunnel Project, Scarborough, Ontario</h5>
   <p>Project comprised a construction of water tunnel in soil using ribs and lagging as support followed by cast in place concrete.
   </p>
+</div>
 
-  <br />
-  <br />
-
+  
+  <div id="p3" class="box">
   <a name="tunnels.utility">Tunnels – Utility/Utilidor</a>
    <h5>Harlem River Tunnel near Broadway Bridge – M-29 Feeder New York, NY</h5>
   <p>Utilidor approximately 700 feet (213m) of 13 (4m) by 12 foot (3.6m) horseshoe-shaped utility tunnel bored at depths of approximately 150 feet below ground surface in hard rock connecting the Bronx and Manhattan, east of the Brooklyn Bridge.
   </p>
+</div>
  
-  <br />
-  <br />
+  
+  <div id="p4" class="box">
   <a name="shafts">Shafts </a>
   <h5>East Side Access – CQ031 – Q – Tip Excavation – Yard Lead, New York, NY</h5>
   <p>Engineering services on Yard Lead Approach structure.
@@ -134,12 +142,17 @@
   <h5>Moshulu Croton Water Treatment Plant, New York, NY</h5>
   <p>The project involved the construction of the underground water treatment plant within the Mosholu Golf Course in the Bronx, NY.  Treatment plant required deep and extensive excavations in rock
   </p>
+</div>
 
+
+<div id="p5" class="box">
   <a name="hdd">HDD/Micro-Tunneling</a>
   <h5>New 138 kV Feeders – Harlem River Crossing at Willis Avenue Bridge HDD/Micro-Tunneling, New York, NY</h5>
   <p>Four new 138 kV underground transmission circuits between the Mott Haven Substation in The Bronx and the Park View Substation in Manhattan, New York were installed.  This included crossings of the Harlem River, Harlem River Drive and a rail yard in soil and rock (2 crossings in soil 2 in rock about 1,000 ft each).
   </p>
+</div>
 
+ <div id="p6" class="box">
   <a name="dams">Dams</a>
   <h5>Extension to Owen Falls Generating Station, Jinja, Uganda</h5>
   <p>Project comprised of extension of existing hydroelectric site at Owen Falls, on the River Nile; included new powerhouse with maximum installed capacity of 150 MW and a canal. Situated on amphibolite and saprolite foundation
@@ -149,7 +162,18 @@
    <h5>Magpie River Development Project, Wawa, Ontario</h5>
   <p>Project comprised of a 30-m (98 ft) high zoned earth-fill dam, zoned partial cutoff and zoned inverted filter and three 15 MW powerhouses located downstream along the river.
   </p>
+</div>
+  </div>
+<script>
+        $('a').on('click', function(){
+   var target = $(this).attr('rel');
+   $("#"+target).show().siblings("div").hide();
+});
 
+        $(document).ready(function () {
+              $("#p1").show();
+        });
+</script>          
  
 </body>
 </html>

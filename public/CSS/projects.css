@@ -1,0 +1,47 @@
+.heading {
+	margin-top: 6px;
+    margin-bottom: 10px;
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+h4.title {
+	padding: 0px 20px 20px 0px;
+	padding-top: 10px;
+}
+
+.projects-list {
+   }
+
+ .container {
+ 	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+ }
+
+ a {
+ 	color: black;
+ }
+
+ .projects-list li:hover {
+    background-color: #3399ff;
+}
+
+.projects-list li:active {
+    background-color: #3399ff;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.box {
+	display: none;
+}
+
+.content {
+	margin-top: 50px;
+	max-width: 100%;
+	margin-left: 57px;
+}
