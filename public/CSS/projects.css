@@ -7,10 +7,11 @@
 h4.title {
 	padding: 0px 20px 20px 0px;
 	padding-top: 10px;
+  font-size: 120%;
 }
 
  .container {
- 	padding-right: 16px;
+ 	  padding-right: 16px;
     padding-left: 16px;
     margin-right: auto;
     margin-left: 15%;
