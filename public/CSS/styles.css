@@ -23,6 +23,12 @@ body {
 	padding: 5px 30px;
 }
 
+.dropdown-menu {
+  margin-left: 1010px;
+  margin-top: -35px;
+  font-size: 80%;
+}
+
 /*Slider css*/
 
 * {box-sizing: border-box;}

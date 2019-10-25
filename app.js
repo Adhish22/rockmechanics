@@ -1,19 +1,139 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
+const mongoose = require("mongoose");
+const ejs = require("ejs");
+const session = require("express-session");
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const findOrCreate = require("mongoose-findorcreate");	
 
 const app = express();
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(session({secret: 'S3CR3T', saveUninitialized: false, resave: false}));
+app.use(passport.initialize()); 
+app.use(passport.session());
+
+mongoose.connect("mongodb+srv://adhish22:rocknroll1@cluster0-lsdv1.mongodb.net/rockmechanics", {useNewUrlParser: true, useUnifiedTopology: true});
+
+const postSchema = {
+  date: String,
+  title: String,
+  content: String,
+  image: Array
+};
+
+const Post = mongoose.model("Post", postSchema);
+
+const userSchema = new mongoose.Schema({
+  username: String,
+  password: String,
+  googleId: String
+});
+
+userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(findOrCreate);
+
+const User = new mongoose.model("User", userSchema);
+
+passport.use(User.createStrategy());
+
+passport.serializeUser(function(user, done){
+	done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+	User.findById(id, function(err, user){
+		done(err, user);
+	});
+});	
+
+passport.use(new GoogleStrategy({
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/google/rockmechanics",
+    userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOrCreate({ googleId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));	
+
 
 app.get("/" , function(req, res){
 	res.render("index");
 });
 
+app.get("/auth/google",
+	passport.authenticate("google", { scope: ["profile"] })
+);
+
+app.get("/auth/google/rockmechanics",
+	passport.authenticate("google", {failureRedirect: "/blog"}),
+	function(req, res){
+		res.redirect("/blog");
+	});
+
 app.get("/projects", function(req, res){
 	res.render("projects");
 });
+
+app.get("/blog", function(req, res){
+
+  Post.find({}, function(err, posts){
+    res.render("blog", {
+      posts: posts
+      });
+  });
+});
+
+app.get("/compose", function(req, res){
+  res.render("compose");
+});
+
+app.post("/compose", function(req, res){
+
+   const post = new Post ({
+   date: req.body.date,
+   title: req.body.postTitle,
+   content: req.body.postBody,
+   image: req.body.imgurl
+ });
+
+  post.save(function(err){
+    if (!err){
+        res.redirect("/blog");
+    }
+  });
+});
+
+app.get("/posts/:postId", function(req, res){
+
+const requestedPostId = req.params.postId;
+
+  Post.findOne({_id: requestedPostId}, function(err, post){
+    res.render("post", {
+      date: post.date,
+      title: post.title,
+      content: post.content,
+      image: post.image
+    });
+  });
+
+});
+
+app.get("/logout", function(req, res){
+  req.logout();
+  res.redirect("/");
+});
+
 
 app.listen(process.env.PORT || 3000, function(){
 	console.log("Server is running on port 3000");

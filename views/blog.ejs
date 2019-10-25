@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<%- include("partials/header"); -%>
+
+<link rel="stylesheet" type="text/css" href="CSS/blog.css">
+
+<div class="heading"><h4 class="title"> Blog </h4></div>
+
+<% posts.forEach(function(post){ %>
+
+<div class="col-8 rightdiv">  
+  <div class="rightTitle"><h5 class="rightHeading">TOP POSTS</h5></div>
+  <div class="box">
+  <div class="title">
+    <h5 style="margin-right: 22%;"><%= post.title %></h5>
+  </div>
+  <div class="content">
+    <p style="font-size: 13px;"><%= post.content.substring(0,200) +"..." %><a style="color:blue;" href="/posts/<%=post._id%>">Read More</a></p>
+    <img style="width: 100%;" src="<%= post.image %>" class="">
+  </div>
+  </div>  
+</div>
+
+<% }) %>
+
+<div class="leftdiv">
+
+<div class="row">
+
+<% posts.forEach(function(post){ %>
+
+ <div class="col-12" style="border-style: solid; padding:10px; border-color: white;">
+ <img class="post-img" src="<%= post.image %>">
+ <h4> <%= post.title %> </h4>
+ <p class="date"><%= post.date %> </p>
+<p style="font-size: 14px;"> <%= post.content.substring(0, 455) + "..." %><a style="font-size: small; color:blue;" href="/posts/<%=post._id%>">Read More</a></p>
+<a style="font-size: small;" href="#">Comments</a>
+</div>
+
+<% }) %>
+ 
+</div>
+</div>
+ 
+</div>

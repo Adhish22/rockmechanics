@@ -1,0 +1,11 @@
+.heading {
+	margin-top: 6px;
+    margin-bottom: 10px;
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+h4.title {
+	padding: 0px 20px 20px 0px;
+	padding-top: 10px;
+    font-size: 120%;
+}
