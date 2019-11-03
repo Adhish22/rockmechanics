@@ -21,14 +21,22 @@ app.use(passport.session());
 
 mongoose.connect("mongodb+srv://adhish22:rocknroll1@cluster0-lsdv1.mongodb.net/rockmechanics", {useNewUrlParser: true, useUnifiedTopology: true});
 
-const postSchema = {
+const postSchema = new mongoose.Schema({
   date: String,
   title: String,
   content: String,
   image: Array
-};
+});
 
 const Post = mongoose.model("Post", postSchema);
+
+const commentSchema = new mongoose.Schema({
+  name: String,
+  body: String,
+  postId :String
+});
+
+const Comments = mongoose.model("Comments", commentSchema);
 
 const userSchema = new mongoose.Schema({
   username: String,
@@ -116,18 +124,46 @@ app.post("/compose", function(req, res){
 
 app.get("/posts/:postId", function(req, res){
 
-const requestedPostId = req.params.postId;
+  const requestedPostId = req.params.postId;
+  console.log(req.params.postId);
+  Post.findOne({_id: requestedPostId}, function(err, posts){
+     if (err) {
+          console.log(err);
+        } else {
+            Comments.find({"postId":req.params.postId}, function (err, comments) {
+                res.render("post", { posts: posts, comments: comments, postId: req.params.postId });
+            });
+        }
+    }); 
+});
 
-  Post.findOne({_id: requestedPostId}, function(err, post){
-    res.render("post", {
-      date: post.date,
-      title: post.title,
-      content: post.content,
-      image: post.image
-    });
+app.post("/posts/:postId", function(req, res){
+  const comment = new Comments({
+    name: req.body.userName,
+    body: req.body.commentBody,
+    postId: req.body.id
   });
 
+ comment.save(function(err){
+    if (!err){
+        res.redirect("/posts/"+req.params.postId);
+    }
+  });
 });
+
+
+
+//     res.render("post", {
+//       date: post.date,
+//       title: post.title,
+//       content: post.content,
+//       image: post.image
+//     });
+//   });
+
+  
+
+// });
 
 app.get("/logout", function(req, res){
   req.logout();
