@@ -84,7 +84,7 @@ app.get("/auth/google",
 );
 
 app.get("/auth/google/rockmechanics",
-	passport.authenticate("google", {failureRedirect: "/blog"}),
+	passport.authenticate("google", {failureRedirect: "/"}),
 	function(req, res){
 		res.redirect("/blog");
 	});
@@ -102,6 +102,10 @@ app.get("/blog", function(req, res){
   });
 });
 
+app.get("/publications", function(req, res){
+  res.render("publications");
+});
+
 app.get("/compose", function(req, res){
   res.render("compose");
 });
@@ -111,8 +115,8 @@ app.post("/compose", function(req, res){
    const post = new Post ({
    date: req.body.date,
    title: req.body.postTitle,
-   content: req.body.postBody,
-   image: req.body.imgurl
+   content: req.body.postBody
+   // image: req.body.imgurl
  });
 
   post.save(function(err){
@@ -123,7 +127,7 @@ app.post("/compose", function(req, res){
 });
 
 app.get("/posts/:postId", function(req, res){
-
+  if (req.isAuthenticated()){
   const requestedPostId = req.params.postId;
   console.log(req.params.postId);
   Post.findOne({_id: requestedPostId}, function(err, posts){
@@ -135,7 +139,10 @@ app.get("/posts/:postId", function(req, res){
             });
         }
     }); 
-});
+}
+else{
+  res.redirect("/blog");
+}});
 
 app.post("/posts/:postId", function(req, res){
   const comment = new Comments({
