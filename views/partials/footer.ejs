@@ -1,70 +1,168 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+  <style>
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    .footer {
+    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    padding: 15px 22px;
+}
+
+ul.social-network, ul.personal-social-network {
+    list-style: none;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+ul.personal-social-network {
+    margin-top: 0;
+}
+
+ul.social-network li, ul.personal-social-network li {
+    display: inline;
+    margin: 0 18px;
+    font-size: 25px;
+}
+
+ul.personal-social-network li {
+    font-size: 40px;
+}
+
+ul.social-network li a {
+    color: #0077b5;
+}
+
+ul.personal-social-network li a {
+    color: #0077b5;
+}
+
+.social-network li:hover .fa-linkedin {
+    color: #0077b5;
+}
+
+.copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.copyright a {
+    color: #000000;
+    font-weight: 600;
+    font-size: 12px;
+    text-shadow: none;
+}
+
+.col-md-offset-4 {
+  float: right;
+}
+
+.col-md-4 {
+  float: left;
+}
+
+  </style>
+  <footer class="footer">
+        <div class="container">
+            <div class="social-icon">
+                <div class="col-md-4">
+                    <ul class="social-network">
+                        <li><a href="https://www.linkedin.com/in/jacekstypulkowski/" target="_blank" class="linkedin tool-tip" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-offset-4">
+                <div class="copyright">
+                    &copy; ROCKMECHANICS. All Rights Reserved.
+                    <div align="right" class="credits">
+                        <a>Designed By:</a> <a href="https://www.linkedin.com/in/adhish-sharma-147318158/">Adhish Sharma</a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+  </footer>
 
 
-<style>
-	
-	.container-fluid {
-		background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-		padding: 1%;
-	}
 
-	.footerText {
-		font-size: 13px;
-		text-align: center;
-	}
 
-	.social-footer {
+
+
+<!--  <style>
+  
+  .container-fluid {
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  padding: 1%;
+  }
+  .footerText1, .footerText2 {
+  font-size: 13px;
+  text-align: center;
+  }
+  .social-footer {
   padding: 0.4rem;
   background: #8a8a8a;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-
-}
-
-.social-footer .social-footer-icons li:last-of-type {
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  }
+  .social-footer .social-footer-icons li:last-of-type {
   margin-right: 0;
-}
-
-.social-footer .social-footer-icons .fa {
+  }
+  .social-footer .social-footer-icons .fa {
   font-size: 1.2rem;
   color: #fefefe;
-}
-
-.social-footer .social-footer-icons .fa:hover {
+  }
+  .social-footer .social-footer-icons .fa:hover {
   color: #4a4a4a;
   transition: color 0.3s ease-in;
-}
-
-li {
-	display: inline;
-	padding-left: 1%;
-}
-
-.menu {
+  }
+  li {
+  display: inline;
+  padding-left: 1%;
+  }
+  .menu {
   text-align: center;
-}
-
-</style>
-
-<footer class="container-fluid">
-	<div class="social-footer-left">
-    <p class="footerText">© RockMechanics</p>
-  <p class="footerText"> All Rights Reserved </p>
-  </div>
-  <div style= class="social-footer-icons">
-    <ul class="menu simple">
-      <li><a href="https://www.facebook.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-      <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-gmail" aria-hidden="true"></i></a></li>
-    </ul>
-  </div>
-</footer>
+  }
+  .footerText1 {
+  text-align: left;
+  }
+  .footerText2 {
+    text-align: right;
+  }
+  </style> -->
+  <!-- <footer class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="social-footer-left">
+          <p class="footerText1">© RockMechanics <br>All Rights Reserved</p>
+          <p class="footerText1"> Contact on:</p>
+        </div>
+        <div style= class="social-footer-icons">
+          <ul class="menu simple">
+            <li><a href="https://www.linkedin.com/in/jacekstypulkowski/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4.col-md-offset-4">
+        <div class="social-footer-right">
+          <p class="footerText2">Website Designed By: Adhish Sharma</p>
+          <p class="footerText2">Contact on:</p>
+        </div>
+        <div style= class="social-footer-icons">
+          <ul class="menu simple">
+            <li><a href="https://www.linkedin.com/in/adhish-sharma-147318158/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> -->

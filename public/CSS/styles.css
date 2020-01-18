@@ -103,7 +103,7 @@ border-radius: 20%;
 
 .blue-section {
 background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-line-height: 200%;
+line-height: 250%;
 }
 
 .expertise {
@@ -145,4 +145,5 @@ font-size: 110%;
 .btn-google{
 background-color: #3399ff;
 }
+
 
