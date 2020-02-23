@@ -1,74 +1,119 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-  <style>
+  <div class="container">
+    <head>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+      <style>
+      .footer {
+      text-align: center;
+      width: 100%;
+      }
+      .f1 {
+      padding: 0;
+      margin: 0;
+      }
+      .f1,
+      .f2,
+      .f3 {
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      display: inline-block;
+      text-align: right;
+      font-size: 14px;
+      padding: 0 8%;
+      min-width: 300px;
+      width: 33%;
+      }
+      .f1 {
+      text-align: left;
+      }
+      .designer {
+        color: #333;
+      }
 
-    .footer {
-    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-    padding: 15px 22px;
-}
+      ul {
+        list-style-type: none;
+      }
 
-ul.social-network, ul.personal-social-network {
-    list-style: none;
-    padding: 10px;
-    transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-}
+      .notLink {
+        color: #333;
+      }
 
-ul.personal-social-network {
-    margin-top: 0;
-}
+      .notLink:hover {
+        text-decoration: none;
+        color: #333;
+      } 
 
-ul.social-network li, ul.personal-social-network li {
-    display: inline;
-    margin: 0 18px;
-    font-size: 25px;
-}
+      .name {
+        color: #333;
+        font-weight: bold;
+      }
 
-ul.personal-social-network li {
-    font-size: 40px;
-}
 
-ul.social-network li a {
-    color: #0077b5;
-}
+      </style>
+    </head>
+    <body>
+      
+       <div class="container">
 
-ul.personal-social-network li a {
-    color: #0077b5;
-}
+       <hr style="border: 1px solid black; opacity: 30%;">
 
-.social-network li:hover .fa-linkedin {
-    color: #0077b5;
-}
+        <footer>
+            <div class="row">
+                <div class="col-sm-4">
+                    <ul class="social-network">
+                        <li>Contact Us : <a href="https://www.linkedin.com/in/jacekstypulkowski/" target="_blank" class="linkedin tool-tip" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <p>Rockmechanics &copy; All Rights Reserved.</p>
+                </div>
+                <div class="col-sm-4">
+                     <a class="notLink">Designed By:</a> <a class="name" href="https://www.linkedin.com/in/adhish-sharma-147318158/">Adhish Sharma</a>
+                </div>
+            </div>
+        </footer>
 
-.copyright {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 14px;
-}
+    </div>
+    </div>
+  </body>
+ 
 
-.copyright a {
-    color: #000000;
-    font-weight: 600;
-    font-size: 12px;
-    text-shadow: none;
-}
 
-.col-md-offset-4 {
-  float: right;
-}
 
-.col-md-4 {
-  float: left;
-}
 
-  </style>
-  <footer class="footer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ <!--  <footer class="footer">
         <div class="container">
             <div class="social-icon">
-                <div class="col-md-4">
+                <div class="col col1">
                     <ul class="social-network">
                         <li><a href="https://www.linkedin.com/in/jacekstypulkowski/" target="_blank" class="linkedin tool-tip" title="Linkedin"><i class="fa fa-linkedin"></i></a>
                         </li>
@@ -76,7 +121,7 @@ ul.personal-social-network li a {
                 </div>
             </div>
 
-            <div class="col-md-offset-4">
+            <div class="col col2">
                 <div class="copyright">
                     &copy; ROCKMECHANICS. All Rights Reserved.
                     <div align="right" class="credits">
@@ -85,84 +130,9 @@ ul.personal-social-network li a {
                 </div>
             </div>
         </div>
-  </footer>
+  </footer>  -->
 
 
 
 
 
-
-<!--  <style>
-  
-  .container-fluid {
-  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-  padding: 1%;
-  }
-  .footerText1, .footerText2 {
-  font-size: 13px;
-  text-align: center;
-  }
-  .social-footer {
-  padding: 0.4rem;
-  background: #8a8a8a;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  }
-  .social-footer .social-footer-icons li:last-of-type {
-  margin-right: 0;
-  }
-  .social-footer .social-footer-icons .fa {
-  font-size: 1.2rem;
-  color: #fefefe;
-  }
-  .social-footer .social-footer-icons .fa:hover {
-  color: #4a4a4a;
-  transition: color 0.3s ease-in;
-  }
-  li {
-  display: inline;
-  padding-left: 1%;
-  }
-  .menu {
-  text-align: center;
-  }
-  .footerText1 {
-  text-align: left;
-  }
-  .footerText2 {
-    text-align: right;
-  }
-  </style> -->
-  <!-- <footer class="container-fluid">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="social-footer-left">
-          <p class="footerText1">© RockMechanics <br>All Rights Reserved</p>
-          <p class="footerText1"> Contact on:</p>
-        </div>
-        <div style= class="social-footer-icons">
-          <ul class="menu simple">
-            <li><a href="https://www.linkedin.com/in/jacekstypulkowski/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-4.col-md-offset-4">
-        <div class="social-footer-right">
-          <p class="footerText2">Website Designed By: Adhish Sharma</p>
-          <p class="footerText2">Contact on:</p>
-        </div>
-        <div style= class="social-footer-icons">
-          <ul class="menu simple">
-            <li><a href="https://www.linkedin.com/in/adhish-sharma-147318158/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer> -->

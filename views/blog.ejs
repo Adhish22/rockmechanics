@@ -1,45 +1,63 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <%- include("partials/header"); -%>
 
-<link rel="stylesheet" type="text/css" href="CSS/blog.css">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Blog</title>
+</head>
 
-<div class="heading"><h4 class="title"> Blog </h4></div>
+<body>
 
-<!-- <% posts.forEach(function(post){ %>
+	 <div class="container">
 
-<div class="col-8 rightdiv">  
-  <div class="rightTitle"><h5 class="rightHeading">RECENT POSTS</h5></div>
-  <div class="box">
-  <div class="title">
-    <h5 style="margin-right: 22%;"><%= post.title %></h5>
-  </div>
-  <div class="content">
-    <p style="font-size: 13px;"><%= post.content.substring(0,200) +"..." %><a style="color:blue;" href="/posts/<%=post._id%>">Read More</a></p>
-  </div>
-  </div>  
-</div>
+        <div class="row">
 
-<% }) %>
- -->
-<div class="leftdiv">
+            <div class="col-lg-12">
+                <h1 class="page-header">Blog Homepage
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a>
+                    </li>
+                    <li class="active">Blog</li>
+                </ol>
+            </div>
 
-<div class="row">
+        </div>
 
-<% posts.forEach(function(post){ %>
+        <div class="row">
+        	<% posts.forEach(function(post){ %>
+        	 <div class="col-lg-8">
+        	 	 <h1><a href="/posts/<%=post._id%>"><%= post.title %></a>
+                </h1>
+                 <p class="lead">by <a href="#">admin</a>
+                </p>
+                <hr>
+                <p><i class="fa fa-clock-o"></i> Posted on <%= post.date %></p>
+                <hr>
+                <p> <%= post.content.substring(0, 455) + "..." %></p>
+                <a class="btn btn-primary" href="/posts/<%=post._id%>">Read More <i class="fa fa-angle-right"></i></a>
+        	 </div>	
+        	<% }) %> 
 
- <div class="col-12" style="border-style: solid; padding:10px; border-color: white;">
- <h4> <%= post.title %> </h4>
- <p class="date"><%= post.date %> </p>
-<p style="font-size: 14px;"> <%= post.content.substring(0, 455) + "..." %><a style="font-size: small; color:blue;" href="/posts/<%=post._id%>">Read More</a></p>
-</div>
+            <br>
 
-<% }) %>
- 
-</div>
-</div>
- 
-</div>
+            <div class="col-lg-4">
+                <div class="well">
+                    <h4>Have something to share?</h4>
+                    <p>You can contact the admin to write a blog post of your own.<br> Click on the link below.</p>
+                    <a href="https://www.linkedin.com/in/jacekstypulkowski/"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>    
+        </div>
+     </div>
+
+     </body>
 
 <%- include("partials/footer"); -%>
+
+

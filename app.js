@@ -127,7 +127,6 @@ app.post("/compose", function(req, res){
 });
 
 app.get("/posts/:postId", function(req, res){
-  if (req.isAuthenticated()){
   const requestedPostId = req.params.postId;
   console.log(req.params.postId);
   Post.findOne({_id: requestedPostId}, function(err, posts){
@@ -139,10 +138,7 @@ app.get("/posts/:postId", function(req, res){
             });
         }
     }); 
-}
-else{
-  res.redirect("/blog");
-}});
+});
 
 app.post("/posts/:postId", function(req, res){
   const comment = new Comments({
@@ -158,26 +154,12 @@ app.post("/posts/:postId", function(req, res){
   });
 });
 
-
-
-//     res.render("post", {
-//       date: post.date,
-//       title: post.title,
-//       content: post.content,
-//       image: post.image
-//     });
-//   });
-
-  
-
-// });
-
 app.get("/logout", function(req, res){
   req.logout();
   res.redirect("/");
 });
 
 
-app.listen(process.env.PORT || 3000, function(){
-	console.log("Server is running on port 3000");
+app.listen(process.env.PORT || 4000, function(){
+	console.log("Server is running on port 4000");
 });

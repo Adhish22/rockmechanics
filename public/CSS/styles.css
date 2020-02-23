@@ -1,10 +1,37 @@
 body {
-background-color: #f8f9fa;
+	background-color: #f8f9fa;
 }
+.carousel-img {
+max-height: 100%;
+width: 100%;
+}
+.listHead {
+padding: 3%;
+}
+.listStyle {
+columns: 2;
+-webkit-columns: 2;
+-moz-columns: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*body {
+background-color: #f8f9fa;
+}*/
 
 /*Navbar */
 
-.h2 {
+/*.h2 {
 font-size:10vw;
 }
 
@@ -14,9 +41,9 @@ color: #3399ff;
 
 .resttabs {
 margin-left: 130px;
-}
+}*/
 
-.title {
+/*.title {
 margin-left: 50px;
 }
 
@@ -29,44 +56,39 @@ margin-left: 1010px;
 margin-top: -35px;
 font-size: 80%;
 }
-
+*/
 /*Slider css*/
-
+/*
 * {box-sizing: border-box;}
 body {
 font-family: Verdana, sans-serif;
-}
+}*/
 
-.mySlides {
+/*.mySlides {
 display: none;
 }       }
 
 img {
 vertical-align: middle;
-}
+}*/
 
 /* Slideshow container */
 
-.slideshow-container {
+/*.slideshow-container {
 max-width: 100%;
 position: relative;
 margin: auto;
-}
+}*/
 
-.carousel-img {
-height: 600px;
-width: 100%;
-}
+/*/* Fading animation */
 
-/* Fading animation */
-
-.fade {
+/*.fade {
 -webkit-animation-name: fade;
 -webkit-animation-duration: 5s;
 animation-name: fade;
 animation-duration: 1.5s;
-}
-
+}*/*/
+/*
 @-webkit-keyframes fade {
 from {opacity: .4}
 to {opacity: 1}
@@ -75,15 +97,15 @@ to {opacity: 1}
 @keyframes fade {
 from {opacity: .4}
 to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
+}*/
+/*
+ On smaller screens, decrease text size 
 
 @media only screen and (max-width: 300px) {
 .text {font-size: 11px}
-}
+}*/
 
-.img {
+./*img {
 position: relative;
 }
 
@@ -97,11 +119,11 @@ padding: 40px 20px 20px 0px;
 height: 380px;
 width: 280px;
 border-radius: 20%;
-}
+}*/
 
 /*Third Section*/
 
-.blue-section {
+/*.blue-section {
 background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 line-height: 250%;
 }
@@ -128,9 +150,9 @@ position:absolute;
 left: 50%;
 margin-top: 90px; 
 opacity: 0.2;
-}
+}*/
 
-ul.expertise-list {
+/*ul.expertise-list {
 padding-top: 1%;
 padding-bottom: 3.5%;
 font-size: 85%;
@@ -143,7 +165,5 @@ font-size: 110%;
 }
 
 .btn-google{
-background-color: #3399ff;
+back*//*ground-color: #3399ff;*/
 }
-
-
