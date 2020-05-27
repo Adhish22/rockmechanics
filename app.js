@@ -62,8 +62,8 @@ passport.deserializeUser(function(id, done) {
 });	
 
 passport.use(new GoogleStrategy({
-    clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
+    clientID: "104082359611-kqakqce5fmajl4i0paeuui3dt7gdnt3k.apps.googleusercontent.com",
+    clientSecret: "MAiqY08PCwmvl9HnahglLkYB",
     callbackURL: "http://rockmechanics.net/auth/google/rockmechanics",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
   },
