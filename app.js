@@ -160,6 +160,6 @@ app.get("/logout", function(req, res){
 });
 
 
-app.listen(80, function(){
+app.listen(80,"0.0.0.0", function(){
 	console.log("Server is running on port 80");
 });
