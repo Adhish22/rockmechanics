@@ -9,6 +9,9 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require("mongoose-findorcreate");	
+const Sentry = require('@sentry/node');
+
+Sentry.init({ dsn: 'https://abdb512f700a4fb88bd4c6e04373ceed@o358833.ingest.sentry.io/3254171' });
 
 const app = express();
 
@@ -158,7 +161,6 @@ app.get("/logout", function(req, res){
   req.logout();
   res.redirect("/");
 });
-
 
 app.listen(80,"0.0.0.0", function(){
 	console.log("Server is running on port 80");
